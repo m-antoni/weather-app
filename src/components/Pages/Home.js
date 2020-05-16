@@ -1,21 +1,15 @@
-import React from 'react'
-
+import React, { Fragment} from 'react'
+import TypeIt from 'typeit-react';
 export default function Home() {
     return (
-        <div className="container">
-            <div className="row section">
-                <div className="col 8 offset-s1">
-                    <div id="openweathermap-widget-11"></div>
-                </div>
-                <div className="col 4">
-                    <div id="openweathermap-widget-cebu"></div>
-                </div>
-            </div>
-            <div className="row section">
-                <div className="col 4 offset-s1">
-                    <div id="openweathermap-widget-davao"></div>
+        <Fragment>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container text-center my-2">
+                    <h1 class="display-4">Wheather App</h1>
+                    <p class="lead"><TypeIt options={{ loop: true, pause: 300, speed: 50, strings: [ "Search Wheather Forecast around the world"]}}></TypeIt></p>
+                    <a href="wheather" className="btn btn-primary">search now</a>
                 </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
