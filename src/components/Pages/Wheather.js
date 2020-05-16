@@ -68,7 +68,7 @@ function Wheather() {
                                 <input onChange={handleOnChange} type="text" className="form-control" id="inputValid" value={city} placeholder="eq. London"/>
                             </div>
                             <div className="form-group col-12 col">
-                                <button onClick={handleFormSubmit} className="btn btn-primary mt-2"><i className="fa fa-search"></i> Search</button>
+                                <button onClick={handleFormSubmit} className="btn btn-outline-primary mt-2"><i className="fa fa-search"></i> Search</button>
                             </div>
                         </form>
                     </div>
@@ -112,24 +112,6 @@ function Wheather() {
                     </div>
                 }
 
-
-                {/* <div className="row justify-content-center">
-                    <div className="col-md-8 pb-3 d-none d-md-block">
-                        <div id="openweathermap-widget-11"></div>
-                    </div>
-                    <div className="col-md-4 col-12 pb-3">
-                        <div id="openweathermap-widget-cebu"></div>
-                    </div>
-                    <div className="col-md-4 col-12 pb-3">
-                        <div id="openweathermap-widget-vigan"></div>
-                    </div>
-                    <div className="col-md-4 col-12 pb-3">
-                        <div id="openweathermap-widget-bicol"></div>
-                    </div>
-                    <div className="col-md-4 col-12 pb-3">
-                        <div id="openweathermap-widget-davao"></div>
-                    </div>
-                </div> */}
             </div>
         </Fragment>
     )
