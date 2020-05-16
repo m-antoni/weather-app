@@ -9,11 +9,10 @@ function Spinner() {
 
 export default Spinner
 
-
 const spinnerStyle = {
 	paddingTop: '10px',
 	paddingBottom: '100px',
-	width: '200px',
+	width: '100px',
 	margin: 'auto',
 	display: 'block'
 }
