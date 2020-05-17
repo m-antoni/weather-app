@@ -6,11 +6,16 @@ function Contact() {
             <div className="mt-2 text-justify">
                 <h1>Contact</h1>
                 
-                <div>Thank you for using my app Hope you enjoy it. I appreciate any comments.</div>
+                <p>Thank you for using my app Hope you enjoy it. I appreciate any comments.</p>
     
 
-                <h6 className="mt-3"><i className="fa fa-envelope"></i>&nbsp;<a href="mailto:codehive2018@gmail.com" className="text-primary"> michaelantoni.cs@gmail.com</a></h6>
-	
+                <h4 className="mt-3">
+                    <i className="fa fa-envelope"></i>&nbsp;<a href="mailto:codehive2018@gmail.com" className="text-primary"> michaelantoni.cs@gmail.com</a>
+                </h4>
+                <h4 className="mt-3">
+                    <i className="fab fa-github"></i>&nbsp;<a href="https://github.com/m-antoni" className="text-primary" target="_blank"> github.com/m-antoni</a>
+                </h4>
+
                 <div>Created by:&nbsp; Michael Antoni </div>
                 <div>App Version: 1.0</div>
             </div>

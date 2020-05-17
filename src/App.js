@@ -9,33 +9,46 @@ import Home from './components/Pages/Home';
 import Contact from './components/Pages/Contact';
 import About from './components/Pages/About';
 import Search from './components/Pages/Search';
+import Compare from './components/Pages/Compare';
 
 export const WeatherForecastContext = createContext();
 
+
 const initialState = {
-    value: '',
+    search_one: '',
+    search_two: '',
     loading: false,
     hidden_form: false,
-    forecast: null,
+    forecast_one: null,
     forecast_two: null, 
     api_key: `${process.env.REACT_APP_API_KEY}`
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'FETCH_SUCCESS':
+        case 'FETCH_SINGLE':
             return {
                 ...state,
-                value: '',
+                search_one: '',
+                search_two: '',
                 loading: false,
                 hidden_form: true,
-                forecast: action.payload,
+                forecast_one: action.payload,
             }
-          break;
+        case 'FETCH_MULTI':
+            return {
+                ...state,
+                search_one: '',
+                search_two: '',
+                loading: false,
+                hidden_form: true,
+                forecast_one: action.payload.one,
+                forecast_two: action.payload.two
+            }
         case 'HANDLE_INPUT':
             return {
               ...state,
-              value: action.payload
+              [action.key]: action.payload
             }
         case 'LOADING':
             return {
@@ -45,14 +58,15 @@ const reducer = (state, action) => {
         case 'SEARCH_AGAIN':
             return {
                 ...state,
-                value: '',
+                search_one: '',
+                search_two: '',
                 loading: false,
                 hidden_form: false,
-                forecast: null,
+                forecast_one: null,
+                forecast_two: null,
             }
         default:
           return initialState;
-          break;
     }
 }
 
@@ -60,26 +74,64 @@ function App() {
 
   const  [state, dispatch] = useReducer(reducer, initialState);
 
-  const handleFormSubmit = e => {
-      e.preventDefault();
-      
-      if(state.value == '')
-      {
-          ToastDanger('Please fill in empty field');
-      }
-      else
-      {
-          dispatch({ type: 'LOADING', payload: true});
-          axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state.value}&units=metric&appid=${state.api_key}`)
-              .then(res => {
-                  dispatch({type: 'FETCH_SUCCESS', payload: res.data })
-              })
-              .catch(err => {
-                  dispatch({ type: 'LOADING', payload: false});
-                  ToastDanger('City or Country is not found!');
-              });
-      }
+  const handleFormSubmit = status => e => {
+        e.preventDefault();
+
+        switch (status) {
+            case 'single':
+                if(state.search_one == '') 
+                {
+                    ToastDanger('Please fill in empty field');
+                }
+                else
+                {
+                    dispatch({ type: 'LOADING', payload: true});
+                    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state.search_one}&units=metric&appid=${state.api_key}`)
+                        .then(res => {
+                            dispatch({type: 'FETCH_SINGLE', payload: res.data })
+                        })
+                        .catch(err => {
+                            dispatch({ type: 'LOADING', payload: false});
+                            ToastDanger('City or Country is not found!');
+                        });
+                }
+                break;
+            case 'multi':
+
+                if(state.search_one == '' || state.search_two == '')
+                {
+                    ToastDanger('Please fill in empty field');
+                }
+                else
+                {
+                    const one = `https://api.openweathermap.org/data/2.5/weather?q=${state.search_one}&units=metric&appid=${state.api_key}`;
+                    const two = `https://api.openweathermap.org/data/2.5/weather?q=${state.search_two}&units=metric&appid=${state.api_key}`;
+            
+                    const REQUEST_ONE = axios.get(one);
+                    const REQUEST_TWO = axios.get(two);
+                    
+                    axios.all([REQUEST_ONE, REQUEST_TWO])
+                        .then(
+                            axios.spread((...res) => {
+                                const response_one = res[0].data;
+                                const response_two = res[1].data;
+                                dispatch({ type: 'FETCH_MULTI', payload: { one: response_one, two: response_two } });
+                                console.log(response_one, response_two);
+                            })
+                        )
+                        .catch( err => {
+                            console.log(err);
+                            dispatch({ type: 'LOADING', payload: false});
+                            ToastDanger('City or Counter is not found');
+                        })
+                }
+                break;
+            default:
+                break;
+        }
   }
+
+  const handleOnChange = e =>  dispatch({type: 'HANDLE_INPUT', key: e.target.name, payload: e.target.value });
 
   const handleDateFormat = (status, date) => {
       let milliseconds = date * 1000
@@ -101,7 +153,8 @@ function App() {
       state,
       dispatch,
       handleFormSubmit,
-      handleDateFormat
+      handleDateFormat,
+      handleOnChange,
   }
   
   return (
@@ -113,6 +166,7 @@ function App() {
                   <Route exact path="/about" component={About}/>
                   <Route exact path="/contact" component={Contact}/>
                   <Route exact path="/search" component={Search}/>
+                  <Route exact path="/compare" component={Compare}/>
               </Switch>
           </Router>
       </WeatherForecastContext.Provider>
