@@ -53,7 +53,10 @@ const reducer = (state, action) => {
         case 'LOADING':
             return {
                 ...state,
-                loading: action.payload
+                loading: action.payload,
+                hidden_form: action.payload,
+                search_one: '',
+                search_two: ''
             }
         case 'SEARCH_AGAIN':
             return {
@@ -76,16 +79,16 @@ function App() {
 
   const handleFormSubmit = status => e => {
         e.preventDefault();
-
+        dispatch({ type: 'LOADING', payload: true});
         switch (status) {
             case 'single':
                 if(state.search_one == '') 
                 {
                     ToastDanger('Please fill in empty field');
+                    dispatch({ type: 'LOADING', payload: false});
                 }
                 else
                 {
-                    dispatch({ type: 'LOADING', payload: true});
                     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state.search_one}&units=metric&appid=${state.api_key}`)
                         .then(res => {
                             dispatch({type: 'FETCH_SINGLE', payload: res.data })
@@ -101,6 +104,8 @@ function App() {
                 if(state.search_one == '' || state.search_two == '')
                 {
                     ToastDanger('Please fill in empty field');
+                    dispatch({ type: 'LOADING', payload: false});
+
                 }
                 else
                 {

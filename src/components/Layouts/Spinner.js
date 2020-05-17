@@ -10,7 +10,7 @@ function Spinner() {
 export default Spinner
 
 const spinnerStyle = {
-	paddingTop: '10px',
+	paddingTop: '100px',
 	paddingBottom: '100px',
 	width: '100px',
 	margin: 'auto',
