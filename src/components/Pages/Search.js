@@ -16,12 +16,12 @@ function Search() {
                             <form className="mt-4 mb-5">
                                 <div className="form-group col-12 col">
                                     <h5>Search for "City" or "Country weather forecast"</h5>
-                                    <input onChange={handleOnChange} name="search_one" type="text" className="form-control" value={searchOne} placeholder="Enter city or country"/>
+                                    <input onChange={handleOnChange} name="search_one" type="text" className="form-control wow fadeInUp" placeholder="Enter city or country"/>
                                 </div>
                                 <div className="form-group col-12 col">
-                                    <button onClick={handleFormSubmit('single')} className="btn btn-outline-primary mt-2"><i className="fa fa-search"></i> Search</button>
+                                    <button onClick={handleFormSubmit('single')} className="btn btn-outline-primary mt-2 wow fadeInLeft"><i className="fa fa-search"></i> Search</button>
                                     &nbsp;&nbsp;
-                                    <a href="/" className="btn btn-dark text-white mt-2"><i className="fa fa-arrow-left"></i> Back</a>
+                                    <a href="/" className="btn btn-dark text-white mt-2 wow fadeInUp" data-wow-delay="1s"><i className="fa fa-arrow-left"></i> Back</a>
                                 </div>
                             </form>
                         </div>

@@ -16,15 +16,15 @@ function Compare() {
                             <form className="mt-4 mb-5">
                                 <div className="form-group col-12 col">
                                     <h5>Compare weather forecast locally or internalional</h5>
-                                    <input onChange={handleOnChange} type="text" name="search_one" className="form-control" id="inputValid" value={value} placeholder="Enter city or country"/>
+                                    <input onChange={handleOnChange} type="text" name="search_one" className="form-control wow fadeInDown" id="inputValid" placeholder="Enter city or country"/>
                                 </div>
                                 <div className="form-group col-12 col">
-                                    <input onChange={handleOnChange} type="text" name="search_two" className="form-control" id="inputValid" value={value2} placeholder="Enter city or country"/>
+                                    <input onChange={handleOnChange} type="text" name="search_two" className="form-control wow fadeInUp" id="inputValid" placeholder="Enter city or country"/>
                                 </div>
                                 <div className="form-group col-12 col">
-                                    <button onClick={handleFormSubmit('multi')} className="btn btn-outline-primary mt-2"><i className="fa fa-search"></i> Search</button>
+                                    <button onClick={handleFormSubmit('multi')} className="btn btn-outline-primary mt-2 wow fadeInLeft"><i className="fa fa-search"></i> Search</button>
                                     &nbsp;&nbsp;
-                                    <a href="/" className="btn btn-dark text-white mt-2"><i className="fa fa-arrow-left"></i> Back</a>
+                                    <a href="/" className="btn btn-dark text-white mt-2 wow fadeInUp" data-wow-delay="1s"><i className="fa fa-arrow-left"></i> Back</a>
                                 </div>
                             </form>
                         </div>

@@ -1,9 +1,8 @@
 import React from 'react'
-import spinner from './spinner.gif';
 
 function Spinner() {
     return (
-		<img src={spinner} alt="spinner..." style={spinnerStyle}/>
+		<img src='/assets/img/spinner.gif' alt="spinner..." style={spinnerStyle}/>
 	)
 }
 
