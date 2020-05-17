@@ -127,7 +127,7 @@ function App() {
                         .catch( err => {
                             console.log(err);
                             dispatch({ type: 'LOADING', payload: false});
-                            ToastDanger('City or Counter is not found');
+                            ToastDanger('City or country is not found');
                         })
                 }
                 break;

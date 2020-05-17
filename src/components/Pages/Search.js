@@ -46,7 +46,7 @@ function Search() {
                                             
                                         </div>
                                         <div className="col-md-6 col-10 pl-1 pt-2">
-                                            <h2><span className="text-secondary"><i className="fa fa-map-marker-alt"></i> </span> <span className="text-warning">{forecast_one.name}, {forecast_one.sys.country}</span></h2>
+                                            <h2><span className="text-secondary"><i className="fa fa-map-marker-alt"></i> </span> <span className="text-warning">{forecast_one.name}</span></h2>
                                             <div><span className="text-secondary">Geolocation:</span> <span>{forecast_one.coord.lon}</span>, <span>{forecast_one.coord.lat}</span></div>
                                             <div><span className="text-secondary">Humidity:</span> {forecast_one.main.humidity} %</div>
                                             <div><span className="text-secondary">Pressure:</span> {forecast_one.main.pressure} hPa</div>  
