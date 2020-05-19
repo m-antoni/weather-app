@@ -15,14 +15,14 @@ function Compare() {
                         <div className="col-md-8 offset-md-2">  
                             <form className="mt-4 mb-5">
                                 <div className="form-group col-12 col">
-                                    <h5>Compare weather forecast locally or internalional</h5>
-                                    <input onChange={handleOnChange} type="text" name="search_one" className="form-control wow fadeInDown" id="inputValid" placeholder="Enter city or country"/>
+                                    <h5 className="text-white">Compare weather forecast local or international</h5>
+                                    <input onChange={handleOnChange} type="text" name="search_one" className="form-control wow fadeInDown text-white" id="inputValid" placeholder="Enter city or country"/>
                                 </div>
                                 <div className="form-group col-12 col">
-                                    <input onChange={handleOnChange} type="text" name="search_two" className="form-control wow fadeInUp" id="inputValid" placeholder="Enter city or country"/>
+                                    <input onChange={handleOnChange} type="text" name="search_two" className="form-control wow fadeInUp text-white" id="inputValid" placeholder="Enter city or country"/>
                                 </div>
                                 <div className="form-group col-12 col">
-                                    <button onClick={handleFormSubmit('multi')} className="btn btn-outline-primary mt-2 wow fadeInLeft"><i className="fa fa-search"></i> Search</button>
+                                    <button onClick={handleFormSubmit('multi')} className="btn btn-light mt-2 wow fadeInLeft"><i className="fa fa-search"></i> Search</button>
                                     &nbsp;&nbsp;
                                     <a href="/" className="btn btn-dark text-white mt-2 wow fadeInUp" data-wow-delay="1s"><i className="fa fa-arrow-left"></i> Back</a>
                                 </div>
@@ -35,8 +35,8 @@ function Compare() {
                     loading ? <Spinner/> : ( forecast_one && forecast_two )&&
                     <div className="row">
                         <div className="col-md-8 offset-md-2">
-                            <div className="card mt-3">
-                                <div className="card-body bg-dark text-white">
+                            <div className="card mt-3 bg-dark text-white border-warning wow fadeInRight">
+                                <div className="card-body">
                                     <div className="row justify-content-center">
                                         <div className="col-md-6 col-10">
                                             <div className="pb-md-4 ml-md-4">
@@ -63,8 +63,8 @@ function Compare() {
                         </div>
 
                         <div className="col-md-8 offset-md-2">
-                            <div className="card mt-3 mb-4">
-                                <div className="card-body bg-dark text-white">
+                            <div className="card mt-3 mb-4 bg-dark text-white border-warning wow fadeInLeft">
+                                <div className="card-body">
                                     <div className="row justify-content-center">
                                         <div className="col-md-6 col-10">
                                             <div className="pb-md-4 ml-md-4">
@@ -88,10 +88,14 @@ function Compare() {
                                         </div>
                                     </div>
                                 </div>
-
-                                <button onClick={() => dispatch({ type: 'SEARCH_AGAIN' })} className="btn btn-primary mt-2"><i className="fa fa-search"></i> Search Again</button>
-
                             </div>
+                           
+                            <div className="form-group">
+                                <button onClick={() => dispatch({ type: 'SEARCH_AGAIN' })} className="btn btn-light mt-1 wow fadeInUp"><i className="fa fa-search"></i> Search Again</button>
+                                &nbsp;&nbsp;
+                                <a href="/" className="btn btn-dark mt-2 wow fadeInUp" data-wow-delay="1s"><i className="fa fa-arrow-left"></i> Back</a>
+                            </div>
+                       
                         </div>
                     </div>
                 }
