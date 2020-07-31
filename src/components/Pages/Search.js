@@ -33,7 +33,7 @@ function Search() {
                     loading ? <Spinner/> : forecast_one &&
                     <div className="row">
                         <div className="col-md-8 offset-md-2">
-                            <div className="card mt-3 mb-4 bg-dark text-light border-light wow zoomIn">
+                            <div className="card mt-3 mb-4 bg-dark text-light border-light">
                                 <div className="card-body">
                                     <div className="row justify-content-center">
                                         <div className="col-md-6 col-10">

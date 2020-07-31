@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useEffect } from 'react';
+import React, { useReducer, createContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootswatch/dist/materia/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
@@ -169,9 +169,9 @@ function App() {
               <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/about" component={About}/>
-                  <Route exact path="/contact" component={Contact}/>
-                  <Route exact path="/search" component={Search}/>
                   <Route exact path="/compare" component={Compare}/>
+                  <Route exact path="/search" component={Search}/>
+                  <Route exact path="/contact" component={Contact}/>
               </Switch>
           </Router>
       </WeatherForecastContext.Provider>

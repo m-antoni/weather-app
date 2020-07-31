@@ -35,7 +35,7 @@ function Compare() {
                     loading ? <Spinner/> : ( forecast_one && forecast_two )&&
                     <div className="row">
                         <div className="col-md-8 offset-md-2">
-                            <div className="card mt-3 bg-dark text-white border-warning wow fadeInRight">
+                            <div className="card mt-3 bg-dark text-white border-warning">
                                 <div className="card-body">
                                     <div className="row justify-content-center">
                                         <div className="col-md-6 col-10">
@@ -63,7 +63,7 @@ function Compare() {
                         </div>
 
                         <div className="col-md-8 offset-md-2">
-                            <div className="card mt-3 mb-4 bg-dark text-white border-warning wow fadeInLeft">
+                            <div className="card mt-3 mb-4 bg-dark text-white border-warning">
                                 <div className="card-body">
                                     <div className="row justify-content-center">
                                         <div className="col-md-6 col-10">
