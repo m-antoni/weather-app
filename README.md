@@ -1,68 +1,93 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# 🌤 Weather App
 
-In the project directory, you can run:
+**Visit Here:** https://michael-weather-app.vercel.app/
 
-### `npm start`
+![screenshot](weatherapp.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**.  
+It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side.  
+This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Search weather forecasts by **city** or **country**
+- Compare forecasts between two different locations
+- Built with **React Context API** for global state management
+- Smooth and minimal **animations**
+- **iziToast** notifications for clean user feedback
+- Responsive, simple UI
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+| Technology | Purpose |
+|-------------|----------|
+| **React** | Front-end framework for building the UI |
+| **React Context API** | Handles global state and data sharing across components |
+| **iziToast** | Displays interactive toast notifications |
+| **OpenWeatherMap API** | Provides live weather forecast data |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Setup Instructions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/m-antoni/weather-app.git
+   cd weather-app
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **Create a `.env` file** in the project root and add your OpenWeatherMap API key:
+   ```bash
+   REACT_APP_API_KEY=your_openweathermap_api_key_here
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. **Run the app locally**
+   ```bash
+   npm start
+   ```
 
-## Learn More
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Reference
 
-### Code Splitting
+This app uses the [OpenWeatherMap API](https://openweathermap.org/api).  
+You’ll need to sign up for a free API key to fetch weather data.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Example endpoint:
+```
+https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Deployment
 
-### Making a Progressive Web App
+You can deploy this app on **Vercel**, **Netlify**, or any React-compatible hosting service.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Make sure to include your environment variable (`REACT_APP_API_KEY`) in your host’s environment settings.
 
-### Advanced Configuration
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## License
 
-### Deployment
+This project is open source and available under the [MIT License](LICENSE).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Author:** Michael Antoni  
+**Date Completed:** October 2025
