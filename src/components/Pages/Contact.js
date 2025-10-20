@@ -3,8 +3,8 @@ import React from 'react'
 function Contact() {
     return (
         <div className="container">
-            <div className="mt-2 text-justify text-white">
-                <h1 className="wow fadeInLeft mt-5">Contact</h1>
+            <div className="mt-2 text-justify text-white contact-text">
+                <h1 className="wow fadeInLeft mt-5 mb-3">Contact</h1>
                 
                 <p>Thank you for using the app hope you enjoy it. I appreciate any comments.</p>
     
