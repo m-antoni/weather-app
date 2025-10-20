@@ -5,11 +5,8 @@
 
 ![screenshot](weatherapp.png)
 
-A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**.  
-It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side.  
-This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
+A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
 
----
 
 ## Features
 
