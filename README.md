@@ -85,6 +85,8 @@ Make sure to include your environment variable (`REACT_APP_API_KEY`) in your hos
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
+## Author
 
-**Author:** Michael Antoni  
-**Date Completed:** October 2025
+**Michael B. Antoni**  
+LinkedIn: [https://linkedin.com/in/m-antoni](https://linkedin.com/in/m-antoni)  
+Email: michaelantoni.tech@gmail.com
