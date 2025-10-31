@@ -1,11 +1,13 @@
 
 # 🌤 Weather App
 
-**Visit Here:** https://michael-weather-app.vercel.app/
+A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
+
+**Visit Here:** https://michael-weather-app.vercel.app
+<br/>
+**Live Demo:** https://youtu.be/SwxnO81hS9c
 
 ![screenshot](weatherapp.png)
-
-A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
 
 
 ## Features
@@ -28,7 +30,6 @@ A pretty simple and straightforward weather forecast application built with **Re
 | **iziToast** | Displays interactive toast notifications |
 | **OpenWeatherMap API** | Provides live weather forecast data |
 
----
 
 ## Setup Instructions
 
@@ -58,7 +59,6 @@ A pretty simple and straightforward weather forecast application built with **Re
    npm run build
    ```
 
----
 
 ## API Reference
 
@@ -70,7 +70,6 @@ Example endpoint:
 https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY
 ```
 
----
 
 ## Deployment
 
@@ -78,7 +77,7 @@ You can deploy this app on **Vercel**, **Netlify**, or any React-compatible host
 
 Make sure to include your environment variable (`REACT_APP_API_KEY`) in your host’s environment settings.
 
----
+
 
 ## License
 
