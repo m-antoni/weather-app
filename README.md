@@ -3,12 +3,12 @@
 
 A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
 
-**Vercel (Prod):** [https://m-antoni-weather.vercel.app](https://m-antoni-weather.vercel.app)
 
-**Render (Docker Image):** [https://weather-app-n7bo.onrender.com/](https://weather-app-n7bo.onrender.com/)
+**Visit Here:** [https://weather-app-n7bo.onrender.com/](https://weather-app-n7bo.onrender.com/)
+
+**Docker Hub:** [https://hub.docker.com/repositories/michael0221](https://hub.docker.com/repositories/michael0221)
 
 **Live Demo:** [https://youtu.be/SwxnO81hS9c](https://youtu.be/SwxnO81hS9c)
-
 
 <br/>
 
@@ -78,10 +78,7 @@ https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY
 
 ## Deployment
 
-You can deploy this app on **Vercel**, **Netlify**, or any React-compatible hosting service.
-
-Make sure to include your environment variable (`REACT_APP_API_KEY`) in your host’s environment settings.
-
+Deployed on `render.com` using a Docker image pulled from Docker Hub.
 
 
 ## License
