@@ -14,7 +14,10 @@ RUN npm install
 COPY . .
 
 # Expose React dev server port
-EXPOSE 3000
+EXPOSE 8080
+
+# Force React to start on 8080
+ENV PORT=8080
 
 # Start React in development mode
 CMD ["npm","start"]

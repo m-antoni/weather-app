@@ -6,7 +6,7 @@ services:
       context: .             # Directory to use as Docker build context (current folder)
       dockerfile: Dockerfile.dev  # Use this Dockerfile for development mode
     ports:
-      - "3000:3000"          # Map port 3000 in container to port 3000 on host
+      - "8080:8080"          # Map port 8080 in container to port 8080 on host
     volumes:
       - .:/app               # Mount current directory into /app inside container for live reload
       - /app/node_modules    # Preserve container's node_modules to avoid overwriting with host
