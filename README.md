@@ -1,19 +1,16 @@
 
 # 🌤 Weather App
 
-A pretty simple and straightforward weather forecast application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
+A simple and straightforward weather application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
 
-
-**Visit Here:** [https://weather-app-n7bo.onrender.com/](https://weather-app-n7bo.onrender.com/)
-
-**Docker Hub:** [https://hub.docker.com/repositories/michael0221](https://hub.docker.com/repositories/michael0221)
-
-**Live Demo:** [https://youtu.be/SwxnO81hS9c](https://youtu.be/SwxnO81hS9c)
+- **Visit Here:** [https://weather-app-979607262100.asia-southeast1.run.app](https://weather-app-979607262100.asia-southeast1.run.app)
+- **Docker Hub:** [https://hub.docker.com/repositories/michael0221](https://hub.docker.com/repositories/michael0221)
+- **Live Demo:** [https://youtu.be/SwxnO81hS9c](https://youtu.be/SwxnO81hS9c)
 
 <br/>
 
-![screenshot](weatherapp.png)
-
+![screenshot](image01.png)
+![screenshot](image02.png)
 
 ## Features
 
@@ -34,6 +31,7 @@ A pretty simple and straightforward weather forecast application built with **Re
 | **React Context API** | Handles global state and data sharing across components |
 | **iziToast** | Displays interactive toast notifications |
 | **OpenWeatherMap API** | Provides live weather forecast data |
+| **Docker** | Containerize and deploy the application using Docker |
 
 
 ## Setup Instructions
@@ -78,7 +76,7 @@ https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY
 
 ## Deployment
 
-Deployed on `render.com` using a Docker image pulled from Docker Hub.
+Deployed on `render.com` or `cloudrun` using a Docker image pulled from Docker Hub.
 
 
 ## License
