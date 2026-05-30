@@ -40,7 +40,6 @@ EXPOSE 8080
 LABEL maintainer="Michael Antoni michaelantoni.tech@gmail.com"
 LABEL version="1.0.0"
 LABEL description="Weather App React project"
-LABEL build_date="2026-03-20"
 
 # Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
