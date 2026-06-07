@@ -42,7 +42,7 @@ jobs:
           docker run -d \
             --name weather-app \
             --restart unless-stopped \
-            -p 8000:80 \
+            -p 8000:8080 \
             ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
 
           docker image prune -f
