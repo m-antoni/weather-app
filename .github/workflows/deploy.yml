@@ -26,6 +26,8 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
+        build-args: |
+            REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}
         
     - name: Deploy to AWS EC2
       uses: appleboy/ssh-action@v0.1.5
