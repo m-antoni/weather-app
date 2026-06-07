@@ -1,16 +1,40 @@
+# ==============================================================================
+# CONTAINER MANAGEMENT GUIDE
+# 
+# 1. START / REBUILD CONTAINER
+#    docker compose up -d --build
+#    * Always use '--build' when changing environment variables or source code 
+#      to force Nginx to recompile the static production assets.
+#
+# 2. VIEW APP LOGS
+#    docker compose logs -f
+#    * Streams Nginx server logs in real-time. Press Ctrl + C to exit log view 
+#      without stopping the application.
+#
+# 3. ACCESS INTERACTIVE TERMINAL (GO INSIDE CONTAINER)
+#    docker compose exec weather-app sh
+#    * Opens a shell terminal inside the running Nginx container. Type 'exit' 
+#      to disconnect.
+#
+# 4. MONITOR RUNNING STATUS
+#    docker compose ps
+#
+# 5. STOP CONTAINER
+#    docker compose down
+#
+# NOTE: Ensure a local '.env' file containing your REACT_APP_API_KEY exists 
+#       in this directory before running the commands above.
+# ==============================================================================
+
 version: "3.8" 
 
 services:
-  weather-app:  # Name of the service / container
+  weather-app:
     build:
-      context: .             # Directory to use as Docker build context (current folder)
-      dockerfile: Dockerfile.dev  # Use this Dockerfile for development mode
+      context: .
+      dockerfile: Dockerfile 
+      args:
+        # This grabs the key from your local machine/.env file and passes it to the build stage
+        - REACT_APP_API_KEY=${REACT_APP_API_KEY}
     ports:
-      - "8080:8080"          # Map port 8080 in container to port 8080 on host
-    volumes:
-      - .:/app               # Mount current directory into /app inside container for live reload
-      - /app/node_modules    # Preserve container's node_modules to avoid overwriting with host
-    environment:
-      - CHOKIDAR_USEPOLLING=true  # Enable polling for file watching (helps on Windows)
-    stdin_open: true         # Keep STDIN open, allows interactive mode (optional)
-    tty: true                # Allocate a pseudo-TTY, useful for interactive processes
+      - "8080:8080"          # Maps port 8080 on your machine to port 8080 in Nginx

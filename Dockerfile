@@ -7,12 +7,11 @@ WORKDIR /app
 # Copy package files and install dependencies
 COPY package*.json ./
 
-# install npm packages
+# Install npm packages
 RUN npm install
 
 # Copy the rest of the source code
 COPY . .
-
 
 # Get the ENV
 ARG REACT_APP_API_KEY
@@ -20,6 +19,7 @@ ENV REACT_APP_API_KEY=$REACT_APP_API_KEY
 
 # Build the React app (production build)
 RUN npm run build
+
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
@@ -30,8 +30,8 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy built React app from builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Copy custom Nginx config for React Router support
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# KEEP THIS: Overwrites the root configuration file to support your full http config
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 8080
 EXPOSE 8080
