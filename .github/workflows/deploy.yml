@@ -47,8 +47,9 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
-        source: "deploy/"
+        source: "deploy/*"
         target: "/home/ubuntu/deploy/"
+        strip_components: 1
 
     - name: SSH and Run Deployment Script on AWS EC2
       uses: appleboy/ssh-action@v1.0.3
