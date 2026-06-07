@@ -2,7 +2,7 @@ name: weather-app
 
 services:
   app:
-    image: michael0221/weather-app:ec2 # Use the image built and pushed in the GitHub Actions workflow
+    image: michael0221/weather-app:ec2 # Built & pushed via GitHub Actions
     ports:
       - "8000:8080" # 8000 server port -> 8080 container port
-    restart: unless-stopped # stop container if exits with error, but restart if exits successfully
+    restart: unless-stopped # Stop on errors, restart on clean exits

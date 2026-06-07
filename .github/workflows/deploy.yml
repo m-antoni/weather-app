@@ -41,26 +41,19 @@ jobs:
         script: |
           mkdir -p ~/deploy
 
-    - name: Copy docker-compose.yml file
+    - name: Copy Deployment Files to AWS EC2
       uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
-        source: "deploy/docker-compose.yml"
-        target: "/home/ubuntu/deploy"
+        source: "deploy/"
+        target: "/home/ubuntu/deploy/"
 
-    - name: Deploy to AWS EC2
+    - name: SSH and Run Deployment Script on AWS EC2
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
-        script: |
-            cd ~/deploy
-
-            docker compose pull
-            docker compose down
-            docker compose up -d
-            
-            docker image prune -f
+        script: sh ~/deploy/deploy.sh
