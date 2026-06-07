@@ -31,23 +31,36 @@ jobs:
         tags: ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
         build-args: |
             REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}
-        
-    - name: Deploy to AWS EC2
-      uses: appleboy/ssh-action@v0.1.5
+    
+    - name: Create Deploy Directory
+      uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
-        
-          docker stop weather-app || true
-          docker rm weather-app || true
+          mkdir -p ~/deploy
 
-          docker run -d \
-            --name weather-app \
-            --restart unless-stopped \
-            -p 8000:8080 \
-            ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
+    - name: Copy docker-compose.yml file
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        source: "deploy/docker-compose.yml"
+        target: "/home/ubuntu/deploy"
 
-          docker image prune -f
+    - name: Deploy to AWS EC2
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+            cd ~/deploy
+
+            docker compose pull
+            docker compose down
+            docker compose up -d
+            
+            docker image prune -f
