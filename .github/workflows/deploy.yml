@@ -33,7 +33,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/weather-app:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
         
           docker stop weather-app || true
           docker rm weather-app || true
@@ -42,6 +42,6 @@ jobs:
             --name weather-app \
             --restart unless-stopped \
             -p 8000:80 \
-            ${{ secrets.DOCKER_USERNAME }}/weather-app:latest
+            ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
 
           docker image prune -f
