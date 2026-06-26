@@ -32,6 +32,8 @@ A simple and straightforward weather application built with **React** and the **
 | **iziToast** | Displays interactive toast notifications |
 | **OpenWeatherMap API** | Provides live weather forecast data |
 | **Docker** | Containerize and deploy the application using Docker |
+| **GitHub Actions** | CI/CD pipeline for automated build, push to Docker Hub, and deploy to Render |
+| **Deployment** | Render.com or Google Cloud Run |
 
 
 ## Setup Instructions
