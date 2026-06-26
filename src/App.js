@@ -121,7 +121,7 @@ function App() {
                                 const response_one = res[0].data;
                                 const response_two = res[1].data;
                                 dispatch({ type: 'FETCH_MULTI', payload: { one: response_one, two: response_two } });
-                                console.log(response_one, response_two);
+                                // console.log(response_one, response_two);
                             })
                         )
                         .catch( err => {
