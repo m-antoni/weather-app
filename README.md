@@ -3,8 +3,7 @@
 
 A simple and straightforward weather application built with **React** and the **React Context API**. It allows users to **search for weather forecasts by city or country** and even **compare two weather forecasts** side-by-side. This project integrates with the **OpenWeatherMap API** to fetch live and accurate weather data.
 
-- **Visit Here:** [https://weather-app-979607262100.asia-southeast1.run.app](https://weather-app-979607262100.asia-southeast1.run.app)
-- **Docker Hub:** [https://hub.docker.com/repositories/michael0221](https://hub.docker.com/repositories/michael0221)
+- **Visit Here:** [https://weather-app-render-gdg1.onrender.com](https://weather-app-render-gdg1.onrender.com)
 - **Live Demo:** [https://youtu.be/SwxnO81hS9c](https://youtu.be/SwxnO81hS9c)
 
 <br/>
