@@ -1,9 +1,9 @@
-name: Deploy Dockerized React App to AWS EC2
+name: Deploy to Render.com
 
 on:
   push:
     branches:
-      - feature/aws-ec2-deploy
+      - deploy/render
 
 jobs:  
  build-and-deploy:
@@ -28,33 +28,11 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/weather-app:ec2
+        tags: ${{ secrets.DOCKER_USERNAME }}/weather-app:render
         build-args: |
             REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}
-    
-    - name: Create Deploy Directory
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
-        key: ${{ secrets.EC2_SSH_KEY }}
-        script: |
-          mkdir -p ~/deploy
-
-    - name: Copy Deployment Files to AWS EC2
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
-        key: ${{ secrets.EC2_SSH_KEY }}
-        source: "deploy/*"
-        target: "/home/ubuntu/deploy/"
-        strip_components: 1
-
-    - name: SSH and Run Deployment Script on AWS EC2
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ubuntu
-        key: ${{ secrets.EC2_SSH_KEY }}
-        script: sh ~/deploy/deploy.sh
+              
+    - name: Trigger Render Deploy
+      env:
+        deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+      run: curl --fail "$deploy_url"
