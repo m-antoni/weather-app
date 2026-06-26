@@ -10,6 +10,7 @@ import Contact from './components/Pages/Contact';
 import About from './components/Pages/About';
 import Search from './components/Pages/Search';
 import Compare from './components/Pages/Compare';
+import TrackingPixel from './components/TrackingPixel';
 
 export const WeatherForecastContext = createContext();
 
@@ -165,6 +166,7 @@ function App() {
   return (
       <WeatherForecastContext.Provider value={WeatherForecastContextValues}>
           <Router>
+              <TrackingPixel />
               <Navbar/>
               <Switch>
                   <Route exact path="/" component={Home}/>
